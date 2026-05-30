@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRABAJO PRACTICO 2</title>
+    <title>Menu de Meriendas</title>
+    link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    
+    <h1>Meriendas</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="destacados.html">Destacados</a>
+        <a href="listado.html">Listado</a>
+    </nav>
+    <h1>Menú de Meriendas</h1>
+    <ul id="lista_meriendas"> </ul>
+    <ul>
+        <button id="but_contar">Contar disponibles</button>
+        <p>Total meriendas: <strong id="resultado_Conteo">-</strong></p>
+    </ul>
+    <script>
+        const meriendas= [
+            "Mate con torta frita",
+            "Mate cocido con bizcochos",
+            "Té con galletitas de agua",
+            "Sanguche de miga con jamón y queso",
+            "Té verde con galletas de arroz"
+        ];
+        const contenedorLista = document.getElementById("lista_meriendas");
+        meriendas.forEach(meriendas => {
+            let li = document.createElement("li");
+            li.textContent = meriendas;
+            li.style.margin = "10px 0";
+            contenedorLista.appendChild(li);
+        });
+    </script>
 </body>
 </html>
