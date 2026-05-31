@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listados</title>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="destacados.html"> Juegos Destacados</a>
+        <a href="listado.html">Listado</a>
+    </nav>
+    <h1>Listado de Juegos</h1>
+    <div>
+        <button id ="but_todos">Mostrar todos</button>
+        <button id="but_Juegos">Mostrar Juegos</button>
+    </div>
+    <div id="contenedor_listado"></div>
+    <script>
+        const juegos = [
+            {nombre: "Call of Duty", genero: "FPS"},
+            {nombre: "Super Mario Bros", genero: "Plataformas"},
+            {nombre: "The Legend of Zelda", genero: "Aventura"},
+            {nombre: "Minecraft", genero: "Sandbox"},
+            {nombre: "Fortnite", genero: "Battle Royale"}
+        ];
+
+        const contenedorListado = document.getElementById("contenedor_listado");
+        function renderizar(array) {
+            contenedorListado.innerHTML = "";
+            array.forEach(juego => {
+                let tarjeta = document.createElement("div");
+                tarjeta.classList.add("tarjeta");
+                tarjeta.innerHTML = `<h3>${juego.nombre}</h3><p>Género: ${juego.genero}</p>`;
+                contenedorListado.appendChild(tarjeta);
+                });
+        }
+        renderizar(juegos);
+
+        document.getElementById("but_todos").addEventListener("click", () => {
+            renderizar(juegos);
+        });
+        document.getElementById("but_Juegos").addEventListener("click", () => {
+            const soloJuegos = juegos.filter(juego => juego.genero === "FPS" || juego.genero === "Plataformas" || juego.genero === "Aventura");
+            renderizar(soloJuegos);
+        });
+    </script>
+
+</body>
+</html>
