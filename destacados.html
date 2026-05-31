@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destacados</title>
+</head>
+<body>
+    nav>
+        <a href="index.html">Inicio</a>
+        <a href="destacados.html"> JuegosDestacados</a>
+        <a href="listado.html">Listado</a>
+    </nav>
+    <h1> Juegos Destacados</h1>
+    <p>Tarjetas seleccionadas: <strong id ="contar_seleccionadas">0</strong></p>
+
+    <div id="contenedor_tarjetas"></div>
+
+    <script>
+        const juegos = ["Call of Duty","Super Mario Bros","The Legend of Zelda","Minecraft","Fortnite"];
+        const contenedorTarjetas = document.getElementById("contenedor_tarjetas");
+        const contenedorTexto = document.getElementById("contar_seleccionadas");
+
+        juegos.forEach(juego => {
+            let tarjeta  = document.createElement("div");
+            tarjeta.classList.add("tarjeta");
+            tarjeta.innerHTML = `<h3>${juego}</h3>`;
+            tarjeta.addEventListener("click", function() {
+                tarjeta.classList.toggle("seleccionada");
+                this.classList.toggle("seleccionada");
+                let cantidadesSeleccionadas = document.querySelectorAll(".tarjeta.seleccionada").length;
+                contenedorTexto.textContent = cantidadesSeleccionadas;
+            });
+            contenedor.appendChild(tarjeta);
+        });
+    </script>   
+</body>
+</html>
