@@ -15,7 +15,7 @@
     <h1>Listado de Juegos</h1>
     <div>
         <button id ="but_todos">Mostrar todos</button>
-        <button id="but_Juegos">Mostrar Juegos</button>
+        <button id="but_Juegos">Mostrar Sandbox</button>
     </div>
     <div id="contenedor_listado"></div>
     <script>
@@ -24,7 +24,9 @@
             {nombre: "Super Mario Bros", genero: "Plataformas"},
             {nombre: "The Legend of Zelda", genero: "Aventura"},
             {nombre: "Minecraft", genero: "Sandbox"},
-            {nombre: "Fortnite", genero: "Battle Royale"}
+            {nombre: "Fortnite", genero: "Battle Royale"},
+            {nombre: "Among Us", genero: "Multijugador"},
+            {nombre: "Overwatch", genero: "FPS"},
         ];
 
         const contenedorListado = document.getElementById("contenedor_listado");
@@ -43,7 +45,7 @@
             renderizar(juegos);
         });
         document.getElementById("but_Juegos").addEventListener("click", () => {
-            const soloJuegos = juegos.filter(juego => juego.genero === "FPS" || juego.genero === "Plataformas" || juego.genero === "Aventura");
+            const soloJuegos = juegos.filter(juego => juego.genero === "Sandbox");
             renderizar(soloJuegos);
         });
     </script>
