@@ -1,0 +1,47 @@
+body {
+    font-family: fedora, sans-serif;
+    background-color: #1fbe74;
+    margin: 20px;   
+}
+nav {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #aaff9d;
+    border-radius: 5px;
+}
+
+nav a{
+    margin-right: 20px;
+    padding: 20px 20px;
+    color: #1fbe74;
+    font-weight: bold;
+}
+.tarjeta{
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    background-color: #aaff9d;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.tarjeta.seleccionada {
+    border-color:hsl(236, 49%, 47%);
+    background-color: hsl(120deg 100% 50%);
+    color: #741212;
+}
+button{
+    padding: 10px 20px;
+    background-color: #be741f;
+    color: rgb(112, 10, 10);
+    border: 1px solid #a5b451;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 15px;
+}

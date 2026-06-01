@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu de Meriendas</title>
-    link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
     <h1>Meriendas</h1>
@@ -34,6 +34,12 @@
             li.style.margin = "10px 0";
             contenedorLista.appendChild(li);
         });
+        const boton = document.getElementById("but_contar");
+        const resultado = document.getElementById("resultado_Conteo");
+
+        boton.addEventListener("click", () => {
+            resultado.textContent = meriendas.length;
+});
     </script>
 </body>
 </html>
